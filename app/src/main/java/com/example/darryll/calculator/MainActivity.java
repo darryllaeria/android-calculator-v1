@@ -240,8 +240,43 @@ public class MainActivity extends AppCompatActivity {
                 result = 0.0;
                 firstNum = "";
                 currentNum = "";
+                firstNumDbl = 0.0;
+                currentNumDbl = 0.0;
                 arithOp = '\0';
-                resultView.setText("0");
+                resultView.setText("0.0");
+            }
+        });
+
+        // Button to calculate final result
+        btnResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //currentNum = setCurrentNumOnClick(btnResult.getText().toString(), currentNum, result);
+                //resultView.setText(currentNum);
+
+                if(currentNum != "" && firstNum != "" && arithOp != '\0') {
+                    currentNumDbl = Double.parseDouble(currentNum);
+                    switch (arithOp) {
+                        case '+':   result = firstNumDbl + currentNumDbl;
+                                    break;
+                        case '-':   result = firstNumDbl - currentNumDbl;
+                                    break;
+                        case '*':   result = firstNumDbl * currentNumDbl;
+                                    break;
+                        case '/':   if(currentNumDbl == 0.0) {
+                                        result = 0.0;
+                                        currentNum = "";
+                                        firstNum = "";
+                                        arithOp = '\0';
+                                        //resultView.setText("0");
+                                    } else {
+                                        result = firstNumDbl / currentNumDbl;
+                                    }
+                                    break;
+                    }
+
+                    resultView.setText(String.valueOf(result));
+                }
             }
         });
     }
