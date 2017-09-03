@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonWidth">90dp</dimen>
+    <dimen name="buttonHeight">90dp</dimen>
+    <dimen name="buttonResultWidth">270dp</dimen>
+    <dimen name="buttonWidthLands">115dp</dimen>
+    <dimen name="buttonHeightLands">55dp</dimen>
+    <dimen name="buttonResultHeightLands">220dp</dimen>
+
+    <dimen name="buttonTextSize">24sp</dimen>
+    <dimen name="buttonResultTextSize">36sp</dimen>
+</resources>
